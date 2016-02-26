@@ -10,7 +10,7 @@ __author__ = 'EvanJames'
 class Solution:
     def Fibonacci(self, n):
         res = [0]*(n+1)
-        res[0] = 0
+        res[0] = 1
         if n >=1:
             res[1] = 1
         if n >=2:
