@@ -47,3 +47,35 @@ class Solution:
         return left and right
 
 
+'''
+java版本
+
+public class test {
+	
+	
+	public static void main(String[] args){
+		
+		int [] sequence = {5,7,6,9,11,10,8};
+		
+		VerifySquenceOfBST(sequence);
+	}
+
+    public static boolean VerifySquenceOfBST(int [] sequence) {
+    	return isBST(sequence, 0, sequence.length-1);
+    }
+    public static boolean isBST(int[] array, int begin, int end) {
+        int left = begin;
+        int right = end - 1;
+        if(end - begin <= 1)
+            return true;
+        while (left < end && array[end] > array[left])
+            left++;
+        while (right > begin && array[end] < array[right])
+            right--;
+        if(left - 1 == right || left == right)
+            return isBST(array, begin, left - 1) && isBST(array, left, end - 1);
+        else
+            return false;
+    }
+}
+'''
