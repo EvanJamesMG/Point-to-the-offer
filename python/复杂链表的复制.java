@@ -1,18 +1,13 @@
 import java.util.ArrayList;
 
 public class test {
-	
-	public static void main(String[] args){
-	
-		
-	}
     public RandomListNode Clone(RandomListNode pHead){
     	if(pHead == null)
     		return pHead;
-    	RandomListNode currenthead = pHead;
-    	
+    	RandomListNode currenthead = pHead; 
     	RandomListNode clonehead;
-		//节点复制
+    	
+	//节点复制
     	while(currenthead !=null){
     		clonehead = new RandomListNode(currenthead.label);
     		clonehead.next = currenthead.next;
@@ -38,7 +33,7 @@ public class test {
     		currenthead = tem;
     	}
     	
-		return clonehead;
+	return clonehead;
     }
 
 }
