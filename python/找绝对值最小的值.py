@@ -37,6 +37,29 @@ class Solution:
                         return list[mid + 1]
 
 
+class Solution:
+    def getabsmin(self, list):
+        if list == None or len(list) == 0:
+            return
+        length = len(list)
+        left = 0
+        right = length - 1
+        while left <= right:
+            if right - left == 1:
+                break
+            mid = (left + right) / 2
+            if list[mid] == 0:
+                return 0
+            elif list[mid] > 0:
+                right = mid
+            else:
+                left = mid
+        if cmp(abs(list[left]), abs(list[right])) < 0:
+            return list[left]
+        else:
+            return list[right]
+
+
 if __name__ == '__main__':
     res = Solution().getabsmin([-7, -5, -3, 2, 3, 6, 7])
     print(res)
